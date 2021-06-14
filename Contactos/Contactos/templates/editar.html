@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Editar Contacto{% endblock%}
+{% load crispy_forms_tags %}
+{% block content %} 
+    <!--AQUI REGISTRAMOS LOS CONTACTOS-->
+    <section class="container">
+      
+        <div class="cotenedorVistas">
+            
+            <h2 class="titulos-borde">Editar Contacto</h2>
+            <form action="" method="POST" class="formulario_contacto" enctype="multipart/form-data">
+                <!--sin este csrf token no se van a ingresar los datos -->
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form  | crispy }}
+                </div> 
+               
+                <br>  
+                <button type="submit" class="btn btn-info">Actualizar</button>
+                <a href="{% url "Contactos" %}">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </a>
+            </form>
+        </div>   
+    </section>
+{% endblock%}

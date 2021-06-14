@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock%}
+
+{% block content %} 
+    <!--ESTE ES EL HOME Y AQUI REGISTRAMOS LOS CONTACTOS-->
+    <section class="container">
+      
+        <div class="cotenedorVistas">
+            <h1>Bienvenid@ a Contactos</h1>
+            <br>
+            <h3>¿Qué deseas hacer?</h3>
+            <div>
+                <br>
+                <a href="{% url "Registrar" %}">
+                    <button type="button" class="btn btn-info">Añadir un Contacto <i class="bi bi-person-plus-fill"></i></button>
+                </a>
+                <br><br>
+                <a href="{% url "Contactos" %}">
+                    <button type="button" class="btn btn-info">Ver Contactos <i class="bi bi-person-fill"></i></button>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock%}

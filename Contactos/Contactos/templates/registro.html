@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Registrar Contacto{% endblock%}
+{% load crispy_forms_tags %}
+{% block content %} 
+    <!--AQUI REGISTRAMOS LOS CONTACTOS-->
+    <section class="container">
+      
+        <div class="cotenedorVistas">
+            {% if img_obj %}
+                <div id='ContenedorImagen'>
+                    <h3 id="mensaje"><i class="bi bi-check-circle"></i>  Añadido correctamente{{img_obj.title}}</h3>               
+                </div>    
+                <script>
+                    //OCULTAMOS EL MENSAJE AÑADIDO CORRECTAMENTE DESPUES DE UNOS SEGUNDOS DE HABER AÑADIDO UN CONTACTO
+                    $('#ContenedorImagen').delay(5000).fadeOut('slow');            
+                </script>   
+            {% endif %}
+            <h2 class="titulos-borde">Añadir Contacto</h2>
+            <form action="" method="POST" class="formulario_contacto" enctype="multipart/form-data">
+                <!--sin este csrf token no se van a ingresar los datos -->
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form  | crispy }}
+                </div>
+                <br>
+                <script>
+                    //OCULTAMOS EL MENSAJE error
+                     $('#error_1_id_numeroCelular').delay(5000).fadeOut('slow');               
+                </script> 
+                <button type="submit" class="btn btn-info">Añadir</button>
+                <a href="{% url "Home" %}">
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </a>
+            </form>
+        </div>
+   
+    </section>
+{% endblock%}

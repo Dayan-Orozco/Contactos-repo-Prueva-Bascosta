@@ -1,0 +1,130 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin-bottom: 40px;
+}
+
+header {
+    background: #0dcaf0;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, .9);
+    font-size: 25px;
+}
+
+.centrar-vertical {
+    vertical-align: middle;
+}
+
+.centrar-horizontal {
+    text-align: center;
+}
+
+.cotenedorVistas {
+    background: #e4e4e4;
+    border-radius: 10px;
+    margin: 50px 10px;
+    padding: 20px 10px;
+    width: 350px;
+}
+
+@media (max-width: 576px) {
+    .cotenedorVistas {
+        background: #e4e4e4;
+        border-radius: 10px;
+        margin: 30px 0px;
+        padding: 20px 10px;
+        width: auto;
+    }
+}
+
+.cotenedorVistas1 {
+    background: #e4e4e4;
+    border-radius: 10px;
+    margin: 50px 10px;
+    padding: 20px 10px;
+}
+
+.miniFotoPersona {
+    width: 50px;
+}
+
+.container {
+    text-align: -webkit-center;
+}
+
+.titulos-borde {
+    text-align: start;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0dcaf0;
+    margin-bottom: 20px;
+}
+
+.tabla-info {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 10px;
+}
+
+form {
+    text-align: start;
+}
+
+.ctrlHolder {
+    padding-top: 10px;
+}
+
+
+/*  con esto ocultamos los mensajes despues de mostrarlos en pantalla */
+
+#mensaje {
+    background: #0dcaf0;
+    text-align: center;
+    font-size: 23px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+a {
+    color: #0dcaf0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: -15%;
+    width: 100%;
+    background: #0dcaf0;
+    padding: 20px;
+    text-align: center;
+}
+
+.biFooter {
+    padding: 10px;
+    font-size: 25px;
+    color: #2b2b2b;
+}
+
+.biFooter:hover {
+    color: white
+}
+
+.errorField {
+    text-align: center;
+    background: red;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    font: icon;
+}

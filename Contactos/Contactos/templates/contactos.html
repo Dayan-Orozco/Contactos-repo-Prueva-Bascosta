@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Mis contactos{% endblock%}
+
+{% block content %} 
+    <!--ESTE ES EL HOME Y AQUI REGISTRAMOS LOS CONTACTOS-->
+    <section class="container">
+        <div class="tabla-info ">  
+            <h1 class="titulos-borde">Mis Contactos  
+                <a href="{% url "Registrar" %}">
+                    <button type="button" class="btn btn-info"><i class="bi bi-plus-lg"></i></button>
+                </a>
+            </h1>
+            <table class="table table-hover">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Número de Celular</th>
+                    <th>Correo</th>
+                    <th>Foto</th>
+                    <th>Acciones</th>
+                </tr>
+
+                {% for contact in contactos %}
+                <tr class="centrar-vertical ">
+                    <td>{{ contact.nombre | title }}</td>
+                    <td>{{ contact.apellido | title }}</td>
+                    <td><a href="tel:{{ contact.numeroCelular }}">{{ contact.numeroCelular }}</a></td>
+                    <td><a href="mailto:{{ contact.correo }}">{{ contact.correo }}</a></td>
+                    <td> {% if contact.foto %}
+                            <img src="{{ contact.foto.url }}" alt="foto Persona" class="miniFotoPersona">
+                        {% else %}
+                            <!-- SI EL CONTACTO NO TIENE FOTO MUESTRA ESTA POR DEFECTO-->
+                            <img src="../media/contactos/persona.png" alt="foto Persona" class="miniFotoPersona">
+                        {% endif %}
+                    </td>
+                    <td> 
+                        <a href="{% url "Editar" contact.id %}">
+                            <button type="button" class="btn btn-success"><i class="bi bi-pencil"></i></button>
+                        </a>
+                        <a href="{% url "Eliminar" contact.id %}">
+                            <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </section>
+{% endblock%}
